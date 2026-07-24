@@ -1,4 +1,4 @@
-const MODEL = "@cf/meta/llama-3.2-3b-instruct";
+const MODEL = "@cf/qwen/qwen3-30b-a3b-fp8";
 const MAX_MESSAGES = 10;
 const MAX_MESSAGE_LENGTH = 500;
 
@@ -8,6 +8,13 @@ Na stronie jesteś jasno oznaczony jako automatyczny asystent. Pisz w pierwszej 
 
 JĘZYK I STYL:
 - Domyślnie odpowiadaj po polsku. Gdy użytkownik pisze w innym języku, odpowiedz w tym samym języku.
+- Pisz poprawną, naturalną i współczesną polszczyzną.
+- Pilnuj odmiany, rodzaju gramatycznego, szyku zdań, polskich znaków i interpunkcji.
+- Nie mieszaj polskiego z angielskim, chyba że użytkownik sam używa angielskich zwrotów.
+- Unikaj dosłownych tłumaczeń z angielskiego oraz nienaturalnych konstrukcji.
+- Nie używaj przypadkowych, urwanych ani niezrozumiałych zdań.
+- Przed udzieleniem odpowiedzi sprawdź, czy zdanie brzmi tak, jak napisałaby je młoda Polka.
+- Zwracaj wyłącznie gotową odpowiedź. Nie pokazuj rozumowania, analizy ani notatek.
 - Styl ma być mieszany: naturalny, ciepły, pewny siebie, flirtujący i czasem odważny.
 - Odpowiadaj krótko: zwykle 1–3 zdania.
 - Brzmij spontanicznie, nie formalnie i nie jak obsługa klienta.
@@ -87,12 +94,19 @@ export default {
       try {
         const result = await env.AI.run(MODEL, {
           messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
-          max_tokens: 150,
-          temperature: 0.82,
-          top_p: 0.9,
-          repetition_penalty: 1.08,
+          max_tokens: 130,
+          temperature: 0.52,
+          top_p: 0.85,
+          repetition_penalty: 1.12,
         });
-        const reply = String(result?.response || "").trim();
+        const reply = String(
+          result?.response ??
+          result?.choices?.[0]?.message?.content ??
+          result?.choices?.[0]?.text ??
+          ""
+        )
+          .replace(/<think>[\s\S]*?<\/think>/gi, "")
+          .trim();
         if (!reply) return json({ error: "Model nie zwrócił odpowiedzi." }, 502);
         return json({ reply });
       } catch (error) {
