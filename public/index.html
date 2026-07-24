@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090407">
+  <meta name="description" content="Wika Private — prywatna galeria i ekskluzywny dostęp 18+.">
+  <meta property="og:title" content="Wika — Private Access">
+  <meta property="og:description" content="Prywatna galeria i dostęp wyłącznie dla dorosłych.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-cherry.webp">
+  <title>Wika — Private Access</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="locked">
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="progress" id="progress"></div>
+
+  <!-- Loader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <img class="preloader__icon" src="assets/cherries.svg" alt="">
+      <div class="preloader__text">Wika Private</div>
+    </div>
+  </div>
+
+  <!-- Age gate -->
+  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="gate__bg"></div>
+    <div class="gate__card">
+      <img class="gate__icon" src="assets/cherries.svg" alt="">
+      <p class="eyebrow">WERYFIKACJA WIEKU</p>
+      <h2 id="gateTitle">Treści dostępne wyłącznie dla osób pełnoletnich.</h2>
+      <p>Potwierdź ukończenie 18 lat, aby wejść na stronę.</p>
+      <div class="gate__actions">
+        <button class="btn btn--primary" id="enterSite" type="button">Mam ukończone 18 lat</button>
+        <button class="btn btn--glass" id="leaveSite" type="button">Wyjdź</button>
+      </div>
+      <small>Potwierdzenie zostanie zapisane na tym urządzeniu.</small>
+    </div>
+  </div>
+
+  <!-- Cinematic intro -->
+  <div class="cinema" id="cinema" aria-hidden="true">
+    <div class="cinema__bg"></div>
+    <div class="cinema__grain"></div>
+    <div class="cinema__center">
+      <img src="assets/cherries.svg" alt="" class="cinema__cherries">
+      <p>WELCOME TO</p>
+      <h2>Wika Private</h2>
+      <span>18+ • Members Only</span>
+    </div>
+    <div class="cinema__line"></div>
+  </div>
+
+  <header class="header" id="header">
+    <a class="brand" href="#start" aria-label="Wika — strona główna">
+      <img src="assets/logo.svg" alt=""><b>WIKA</b>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#gallery">Galeria</a>
+      <a href="#access">Dostęp</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav__cta" href="https://t.me/+V5A0HAUnmzQ3ZDM8" target="_blank" rel="noopener noreferrer">Private Access</a>
+    </nav>
+    <button class="menu" id="menuButton" type="button" aria-label="Otwórz menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="hero__image" id="heroImage"></div>
+      <div class="hero__veil"></div>
+      <div class="hero__ornament hero__ornament--one"></div>
+      <div class="hero__ornament hero__ornament--two"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow">PRIVATE • EXCLUSIVE • 18+</p>
+        <h1 class="display split-title">Wika</h1>
+        <p class="hero__lead reveal-fast">Bliżej niż na social mediach. Odważniej niż publicznie.</p>
+        <div class="actions reveal-fast">
+          <a class="btn btn--primary magnetic" href="https://t.me/+V5A0HAUnmzQ3ZDM8" target="_blank" rel="noopener noreferrer">Otwórz prywatny dostęp →</a>
+          <a class="btn btn--glass magnetic" href="#gallery">Zobacz galerię</a>
+        </div>
+        <div class="hero__badges reveal-fast">
+          <span>Treści 18+</span>
+          <span>Prywatny kanał</span>
+          <span>Regularne publikacje</span>
+        </div>
+      </div>
+
+      <aside class="hero__float tilt-card">
+        <img src="assets/cherries.svg" alt="">
+        <strong>Cherry Edition</strong>
+        <small>Wybrane kadry i prywatne publikacje.</small>
+      </aside>
+
+      <a class="scroll-note" href="#gallery">Przewiń niżej</a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Wika Private <i>✦</i></span><span>Members Only <i>✦</i></span><span>Private Preview <i>✦</i></span><span>After Dark <i>✦</i></span>
+        <span>Wika Private <i>✦</i></span><span>Members Only <i>✦</i></span><span>Private Preview <i>✦</i></span><span>After Dark <i>✦</i></span>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <section class="section gallery-section layer-section" id="gallery">
+      <div class="layer-shape layer-shape--top"></div>
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">PRIVATE GALLERY</p>
+          <h2 class="title">Dwa pełne podglądy. Pozostałe kadry tylko dla Members Only.</h2>
+        </div>
+        <span class="section-num">01 / GALLERY</span>
+      </div>
+
+      <div class="filter-bar reveal">
+        <button class="filter active" data-filter="all" type="button">Wszystkie</button>
+        <button class="filter" data-filter="preview" type="button">Pełny podgląd</button>
+        <button class="filter" data-filter="members" type="button">Members Only</button>
+      </div>
+
+      <div class="gallery reveal">
+        <article class="gallery-card tilt-card tall" data-category="preview" data-locked="false"
+          data-full="assets/hero-cherry.webp" data-title="Cherry Edition" data-label="Pełny podgląd"
+          data-description="Główny kadr z serii Cherry.">
+          <img src="assets/hero-cherry.webp" alt="Cherry Edition">
+          <div class="shine"></div>
+          <div class="gallery-card__meta">
+            <div><small>Pełny podgląd</small><strong>Cherry Edition</strong></div>
+            <span class="gallery-card__open">↗</span>
+          </div>
+        </article>
+
+        <article class="gallery-card tilt-card wide tall" data-category="preview" data-locked="false"
+          data-full="assets/gallery-tongue.webp" data-title="Bedroom Close-up" data-label="Pełny podgląd"
+          data-description="Pełny podgląd kadru z sypialni.">
+          <img src="assets/gallery-tongue.webp" alt="Bedroom Close-up">
+          <div class="shine"></div>
+          <div class="gallery-card__meta">
+            <div><small>Pełny podgląd</small><strong>Bedroom Close-up</strong></div>
+            <span class="gallery-card__open">↗</span>
+          </div>
+        </article>
+
+        <article class="gallery-card tilt-card locked-card" data-category="members" data-locked="true">
+          <img src="assets/members-1.webp" alt="Private Mirror — rozmyty podgląd">
+          <div class="locked-card__blur locked-card__blur--strong"></div>
+          <div class="locked-card__center">
+            <span class="lock-icon">⌁</span>
+            <small>Members Only</small>
+            <strong>Private Mirror</strong>
+            <em>Przytrzymaj zdjęcie — zarys będzie znacznie wyraźniejszy</em>
+          </div>
+          <div class="shine"></div>
+        </article>
+
+        <article class="gallery-card tilt-card locked-card" data-category="members" data-locked="true">
+          <img src="assets/members-2.webp" alt="Private Bedroom — rozmyty podgląd">
+          <div class="locked-card__blur locked-card__blur--strong"></div>
+          <div class="locked-card__center">
+            <span class="lock-icon">⌁</span>
+            <small>Members Only</small>
+            <strong>Private Bedroom</strong>
+            <em>Przytrzymaj zdjęcie — zarys będzie znacznie wyraźniejszy</em>
+          </div>
+          <div class="hold-hint"><span></span><b>Przytrzymaj</b></div>
+          <div class="shine"></div>
+        </article>
+
+        <article class="gallery-card tilt-card wide tall locked-card" data-category="members" data-locked="true">
+          <img src="assets/members-3.webp" alt="Private Laundry — rozmyty podgląd">
+          <div class="locked-card__blur locked-card__blur--strong"></div>
+          <div class="locked-card__center">
+            <span class="lock-icon">⌁</span>
+            <small>Members Only</small>
+            <strong>Private Laundry</strong>
+            <em>Przytrzymaj zdjęcie — zarys będzie znacznie wyraźniejszy</em>
+          </div>
+          <div class="hold-hint"><span></span><b>Przytrzymaj</b></div>
+          <div class="shine"></div>
+        </article>
+      </div>
+    </section>
+
+
+
+    <!-- ACCESS -->
+    <section class="section transition-section" id="access">
+      <div class="transition-orb transition-orb--one"></div>
+      <div class="transition-orb transition-orb--two"></div>
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">PRIVATE ACCESS</p>
+          <h2 class="title">Zobacz pełną wersję bez rozmycia.</h2>
+        </div>
+        <span class="section-num">02 / ACCESS</span>
+      </div>
+
+      <div class="access-grid">
+        <div class="access-copy reveal">
+          <p>Przejście prowadzi bezpośrednio do prywatnego kanału Telegram. Tam znajdują się pełne publikacje i dodatkowe materiały.</p>
+          <div class="steps">
+            <div class="step"><span class="step__num">01</span><div><strong>Kliknij private access</strong><span>Otworzy się zaproszenie Telegram.</span></div></div>
+            <div class="step"><span class="step__num">02</span><div><strong>Wejdź do zamkniętego kanału</strong><span>Uzyskaj dostęp do pełnej kolekcji.</span></div></div>
+            <div class="step"><span class="step__num">03</span><div><strong>Zobacz kolejne dropy</strong><span>Nowe publikacje pojawiają się regularnie.</span></div></div>
+          </div>
+        </div>
+
+        <div class="access-card tilt-card reveal">
+          <img class="access-card__logo" src="assets/cherries.svg" alt="">
+          <p class="eyebrow">MEMBERS ONLY</p>
+          <h3>Wika Private</h3>
+          <p>Prywatna przestrzeń z dodatkowymi publikacjami.</p>
+          <ul class="benefits">
+            <li>Pełne zdjęcia bez rozmycia</li>
+            <li>Dodatkowe serie i dropy</li>
+            <li>Materiały tylko dla obserwujących</li>
+            <li>Dostęp wyłącznie 18+</li>
+          </ul>
+          <a class="btn btn--primary magnetic" style="width:100%" href="https://t.me/+V5A0HAUnmzQ3ZDM8" target="_blank" rel="noopener noreferrer">Przejdź do Telegrama →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="title">Najczęstsze pytania.</h2>
+        </div>
+        <span class="section-num">03 / INFO</span>
+      </div>
+
+      <div class="faq reveal">
+        <div class="faq-item">
+          <button class="faq-button" type="button"><span>Które zdjęcia można otworzyć w pełnym podglądzie?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Pełny podgląd mają wyłącznie Cherry Edition oraz Bedroom Close-up. Trzy pozycje Members Only są zapisane w paczce wyłącznie jako trwale rozmyte miniatury.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-button" type="button"><span>Dlaczego część zdjęć jest rozmyta?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Rozmyte zdjęcia oznaczają materiały przeznaczone dla użytkowników prywatnego kanału.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-button" type="button"><span>Gdzie prowadzi przycisk private access?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Przycisk otwiera zaproszenie do prywatnego kanału Telegram.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-button" type="button"><span>Czy strona działa na telefonie?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Tak. Galeria, pełnoekranowy podgląd i gesty zostały przygotowane pod telefon, tablet i komputer.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL WOW -->
+    <section class="final-wow">
+      <div class="final-wow__image"></div>
+      <div class="final-wow__veil"></div>
+      <div class="final-wow__spark final-wow__spark--one"></div>
+      <div class="final-wow__spark final-wow__spark--two"></div>
+      <div class="final-wow__content reveal">
+        <img src="assets/cherries.svg" alt="">
+        <p class="eyebrow">YOU’VE ONLY SEEN THE PREVIEW</p>
+        <h2>Pełna kolekcja czeka po drugiej stronie.</h2>
+        <p>Odblokuj prywatny dostęp i zobacz materiały bez rozmycia.</p>
+        <a class="btn btn--primary pulse-button magnetic" href="https://t.me/+V5A0HAUnmzQ3ZDM8" target="_blank" rel="noopener noreferrer">Unlock Wika Private →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#start"><img src="assets/logo.svg" alt=""><b>WIKA</b></a>
+    <div class="footer__center">© <span id="year"></span> Wika. Wszystkie prawa zastrzeżone.</div>
+    <button class="footer__reset" id="resetAge" type="button">Ponów weryfikację wieku</button>
+  </footer>
+
+  <a class="mobile-cta" href="https://t.me/+V5A0HAUnmzQ3ZDM8" target="_blank" rel="noopener noreferrer">Otwórz prywatny dostęp →</a>
+
+
+  <!-- Normal lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox__stage">
+      <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Zamknij">×</button>
+      <button class="lightbox__arrow prev" id="lightboxPrev" type="button" aria-label="Poprzednie">‹</button>
+      <button class="lightbox__arrow next" id="lightboxNext" type="button" aria-label="Następne">›</button>
+      <div class="lightbox__image-wrap">
+        <img class="lightbox__image" id="lightboxImage" src="" alt="">
+      </div>
+      <aside class="lightbox__info">
+        <small id="lightboxCategory"></small>
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDescription"></p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Locked content modal -->
+  <div class="unlock-modal" id="unlockModal" role="dialog" aria-modal="true">
+    <div class="unlock-modal__card">
+      <button class="unlock-modal__close" id="unlockClose" type="button">×</button>
+      <img src="assets/cherries.svg" alt="">
+      <p class="eyebrow">MEMBERS ONLY</p>
+      <h3>To zdjęcie jest zablokowane.</h3>
+      <p>Pełna wersja bez rozmycia jest dostępna w prywatnym kanale.</p>
+      <a class="btn btn--primary" href="https://t.me/+V5A0HAUnmzQ3ZDM8" target="_blank" rel="noopener noreferrer">Odblokuj dostęp →</a>
+    </div>
+  </div>
+
+  <!-- Wika Chat -->
+  <button class="chat-launcher" id="chatLauncher" type="button" aria-label="Otwórz czat z Wiką">
+    <span class="chat-launcher__pulse"></span>
+    <img src="assets/logo.svg" alt="">
+    <span class="chat-launcher__badge" id="chatUnread">1</span>
+  </button>
+
+  <section class="chat-panel" id="chatPanel" aria-label="Wika Chat" aria-hidden="true">
+    <header class="chat-header">
+      <div class="chat-profile">
+        <div class="chat-avatar">
+          <img src="assets/logo.svg" alt="">
+          <span></span>
+        </div>
+        <div>
+          <strong>Wika Chat</strong>
+          <small>automatyczny asystent • online</small>
+        </div>
+      </div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Zamknij czat">×</button>
+    </header>
+
+    <div class="chat-intro">
+      <span>18+</span>
+      <p>Naturalny flirt, odważniejsze odpowiedzi i informacje o prywatnym dostępie.</p>
+    </div>
+
+    <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
+
+    <div class="chat-quick" id="chatQuick">
+      <button type="button" data-message="Co znajdę w prywatnej części?">Co jest prywatnie?</button>
+      <button type="button" data-message="Powiedz mi coś flirtującego 😏">Zaskocz mnie 😏</button>
+      <button type="button" data-message="Jak przejść do Telegrama?">Private access</button>
+    </div>
+
+    <form class="chat-form" id="chatForm">
+      <textarea id="chatInput" maxlength="500" rows="1" placeholder="Napisz wiadomość…" autocomplete="off" aria-label="Wiadomość"></textarea>
+      <button id="chatSend" type="submit" aria-label="Wyślij wiadomość"><span>➤</span></button>
+    </form>
+
+    <footer class="chat-footer">
+      <span>Odpowiedzi generuje automatyczny asystent Wika.</span>
+      <button id="chatClear" type="button">Wyczyść</button>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

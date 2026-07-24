@@ -1,0 +1,13 @@
+{
+  "name": "wikaofficial-chat",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "node --check src/index.js && node --check public/chat.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
